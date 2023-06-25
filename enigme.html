@@ -58,8 +58,10 @@
                         vie. Leur Générale, Okoyé est également la dirigeante des forces armées et des
                         renseignements wakandais.</p>
                     <p>
-                        Prouve ton talent d’espion et déchiffre cette réplique d’Okoyé écrite en Wakandais,
-                        et apprend par la même occasion la première valeur d’une Dora Milaje !
+                        La réussite de cette évaluation ne dépend pas de la chance mais bel et bien de
+                        l’entrainement que tu as suivi jusqu’ici ainsi que de ta détermination. Relève ce défi
+                        et montre-nous que tu es capable de porter les valeurs du Black Panther et du
+                        Wakanda !
                     </p>
                     <div class="souris-container"><img src="./illustrations+Logo/Enigme/logo_souris_BP1_blanc.png"
                             alt="logo souris"></div>
@@ -71,50 +73,36 @@
 
         <!-- section questionnaire enigme -->
         <section class="enigme">
-            <div class="sujet cacheContent">
-                <q>" SI JE SUIS FIDELE C’EST A CE TRONE
-                    PEU IMPORTE QUI MONTE DESSUS "
-                </q>
-            </div>
             <div class="flex-container">
                 <div class="contenant">
-                    <div class="transcription cacheContent">
-                        <p>Voici la transicription de l’alphabet :</p>
-                        <p>A = <span class="wakanda_font">a</span> ; B = <span class="wakanda_font">b</span> ; c = <span
-                                class="wakanda_font">c</span> ; d
-                            = <span class="wakanda_font">d</span> ; e = <span class="wakanda_font">e</span> ; f = <span
-                                class="wakanda_font">f</span> ; g
-                            = <span class="wakanda_font">g</span> ; h = <span class="wakanda_font">h</span> ; i = <span
-                                class="wakanda_font">i</span> ; j
-                            = <span class="wakanda_font">j</span> ;
-                        </p>
-                        <p>k = <span class="wakanda_font">k</span> ; l = <span class="wakanda_font">l</span> ; m = <span
-                                class="wakanda_font">m</span> ; n
-                            = <span class="wakanda_font">n</span> ; o = <span class="wakanda_font">o</span> ; p = <span
-                                class="wakanda_font">p</span> ; q
-                            = <span class="wakanda_font">q</span> ; r = <span class="wakanda_font">r</span> ; s = <span
-                                class="wakanda_font">s</span> ; t = <span class="wakanda_font">t</span> ;
-                        </p>
-                        <p>u = <span class="wakanda_font">u</span> ; w = <span class="wakanda_font">w</span> ; x = <span
-                                class="wakanda_font">x</span> ; y
-                            = <span class="wakanda_font">y</span> ; z = <span class="wakanda_font">y</span>
-                        </p>
+                    <div class="container-sujet cacheContent">
+                        <h2>ENIGME NUMERO <span class="compteur"></span></h2>
+                        <p class="para">Prouve ton talent d’espion et déchiffre cette réplique d’Okoyé écrite en
+                            Wakandais, et
+                            apprend par la même occasion la première valeur d’une Dora Milaje !</p>
+                        <q class="quote">" SI JE SUIS FIDELE C’EST A CE TRONE
+                            PEU IMPORTE QUI MONTE DESSUS "
+                        </q>
+                        <p class="para"></p>
                     </div>
                     <div class="formulaire">
                         <form action="" class="caheContent">
                             <label for="reponse">Alors, as tu la réponse ?</label>
-                            <textarea name="" id="reponse" placeholder="réponse" cols="30"></textarea>
-                            <button type="submit" id="btnConfirm" value="envoyer">ENVOYER</button>
+                            <div>
+                                <textarea name="" id="reponse" placeholder="réponse" cols="30"></textarea>
+                                <span class="validator"></span>
+                                <button type="submit" id="btnConfirm" value="envoyer">ENVOYER</button>
+                            </div>
+
                         </form>
 
                         <!-- partie popup -->
                         <div class="overlay">
                             <div class=" overlay-transparent">
                                 <div class="popup" id="popup-quiz">
-                                    <h2>Lorem ipsum dolor sit amet.</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, officiis?
-                                    </p>
-                                    <button type="submit" class="btn-close" id="btnClose">QUESTION SUIVANTE</button>
+                                    <h2 class="popup-titre"></h2>
+                                    <p class="popup-text"></p>
+                                    <button type="submit" class="btn-popup" id="btn-popup">QUESTION SUIVANTE</button>
                                 </div>
                             </div>
                         </div>
@@ -122,12 +110,28 @@
                 </div>
                 <aside>
                     <div class="aside-element cacheContent">
-                        <h3>Le savais tu ?</h3>
-                        <p>
-                            Plusieurs sources s’entendent pour dire que la lettre la plus utilisée en français est
-                            la lettre E. En pourcentage de fréquence, la lettre est utilisée à 14% dans une
-                            phrase. Et si tu regardais quel symbole revient le plus souvent ?
-                        </p>
+                        <div class="transcrip-aside">
+                            <p>Voici la transicription de l’alphabet :</p>
+                            <p>A = <span class="wakanda_font">a</span> ; B = <span class="wakanda_font">b</span> ; c =
+                                <span class="wakanda_font">c</span> ; d
+                                = <span class="wakanda_font">d</span> ; e = <span class="wakanda_font">e</span> ; f =
+                                <span class="wakanda_font">f</span> ; g
+                                = <span class="wakanda_font">g</span> ; h = <span class="wakanda_font">h</span> ; i =
+                                <span class="wakanda_font">i</span> ; j
+                                = <span class="wakanda_font">j</span> ;
+                            </p>
+                            <p>k = <span class="wakanda_font">k</span> ; l = <span class="wakanda_font">l</span> ; m =
+                                <span class="wakanda_font">m</span> ; n
+                                = <span class="wakanda_font">n</span> ; o = <span class="wakanda_font">o</span> ; p =
+                                <span class="wakanda_font">p</span> ; q
+                                = <span class="wakanda_font">q</span> ; r = <span class="wakanda_font">r</span> ; s =
+                                <span class="wakanda_font">s</span> ; t = <span class="wakanda_font">t</span> ;
+                            </p>
+                            <p>u = <span class="wakanda_font">u</span> ; w = <span class="wakanda_font">w</span> ; x =
+                                <span class="wakanda_font">x</span> ; y
+                                = <span class="wakanda_font">y</span> ; z = <span class="wakanda_font">y</span>
+                            </p>
+                        </div>
                     </div>
                 </aside>
             </div>
@@ -157,8 +161,9 @@
             <div class="about">
                 <h2>PAGES</h2>
                 <ul>
-                    <li><a href="#entete">À propos</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./wakanda.html">Wakanda</a></li>
+                    <li><a href="#entete">Enigme</a></li>
                 </ul>
             </div>
             <div class="social">
@@ -183,7 +188,7 @@
 
     </footer>
     <script src="./srcipts/scriptAnimation.js"></script>
-    <script src="./srcipts/scriptPopup.js"></script>
+    <script src="./srcipts/enigme.js"></script>
 </body>
 
 </html>

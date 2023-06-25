@@ -25,7 +25,7 @@ section.defi {
     position: relative;
     top: 20%;
     left: 50%;
-    animation: fade-in ease-in-out 1s;
+
 }
 
 .defi h1 {
@@ -42,22 +42,24 @@ section.defi {
     background-size: 105%;
     height: 500px;
     padding-top: 26%;
-    padding-left: 20%;
+    padding-left: 16%;
 }
 
 .defi .paragraphe p {
-    width: 60%;
+    width: 63%;
 }
 
 .defi .souris-container {
     width: 60%;
+    /* min-width: 50px; */
 }
 
 .defi img {
     max-width: 40px;
+    min-width: 20px;
     display: block;
     margin-top: 5px;
-    margin-left: 30%;
+    margin-left: 35%;
 }
 
 /* section questionnaire enigme */
@@ -73,21 +75,22 @@ section.enigme {
 .enigme .sujet {
     width: 55%;
     margin: 30px 0;
-    animation: fade-in ease-in-out 1s;
+
 }
 
 /* enigme à resoudre */
-section.enigme .sujet q {
-    font-size: calc(1rem + 1vw);
+section.enigme q {
+    font-size: calc(0.8rem + 1.2vw);
     color: var(--medium-purple);
     font-weight: normal;
     letter-spacing: 3px;
     word-spacing: 10px;
     line-height: 1.5;
+    font-family: 'Wakanda Forever', sans-serif;
 }
 
 /* suppression des crpchet d'origine */
-section.enigme .sujet q::before, section.enigme .sujet q::after {
+section.enigme .container-sujet q::before, section.enigme .container-sujet q::after {
     content: none;
 }
 
@@ -97,27 +100,32 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
 
 }
 
-/* transcription */
-.enigme .transcription .wakanda_font, section.enigme .sujet q {
-    font-family: 'Wakanda Forever', sans-serif;
-}
 
-/* conteneur formulaire et transcription */
+/* conteneur formulaire et container-sujet */
 .enigme .contenant {
     flex: 1;
 }
 
-.enigme .transcription {
+.enigme .container-sujet {
     margin: 30px 0;
-    animation: fade-in ease-in-out 1s;
+
 }
 
-.enigme .transcription p:nth-of-type(1) {
-    margin-bottom: 20px;
+.enigme .container-sujet span {
+    font-family: 'Cantarell', sans-serif;
+}
+
+.enigme .container-sujet h2 {
+    text-decoration: underline;
+}
+
+.enigme .container-sujet p {
+    margin: 10px 0;
 }
 
 .enigme .contenant .formulaire {
-    margin: 160px 0 30px 0;
+    margin: 0 0 30px 0;
+    padding-top: 2vw;
 }
 
 /* rendre les element de form en bloc */
@@ -127,15 +135,20 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
     font-size: calc(0.5rem + 0.5vw);
 }
 
+/* div champ de reponse et bouton envoyer */
+.contenant .formulaire form>div {
+    margin-top: 10px;
+    width: 85%;
+}
+
 /* champ de reponse */
 .enigme .formulaire textarea {
     outline: none;
     resize: none;
-    width: 85%;
+    width: 100%;
     border-radius: 20px;
     padding-top: 5px;
     padding-left: 10px;
-    margin: 10px 0;
     border: solid 2px;
     color: var(--medium-purple);
     background-color: transparent;
@@ -152,8 +165,9 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
     padding: 10px 30px;
     border: var(--light-purple) solid 1px;
     border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 3vw;
     font-weight: bold;
-    margin: 60px 0 0 30%;
     cursor: pointer;
     letter-spacing: 1px;
 }
@@ -171,7 +185,7 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
     top: 5%;
     left: 5vh;
     background: var(--overlay-popup-color);
-    z-index: 10;
+    z-index: 12;
     display: none;
 }
 
@@ -190,9 +204,10 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
     top: 50%;
     left: 50%;
     width: 40%;
-    height: 400px;
+    height: 30vw;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
     background: var(--popup-color);
     transform: translate(-50%, -50%);
@@ -203,35 +218,27 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
 
 .formulaire #popup-quiz p {
     letter-spacing: 1.5px;
-    margin-top: 10px;
-    padding: 20px;
-    /* text-align: center; */
 }
 
 .formulaire #popup-quiz h2 {
     font-size: calc(1rem + 1vw);
     color: var(--white-color);
-    margin-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 10px;
 }
 
 
-.formulaire #btnClose {
+.formulaire #btn-popup {
     margin: 0px;
-    margin-top: 50px;
 
 }
 
 
 /* conteneur aside */
 .enigme aside {
-    flex: 2;
+    flex: 1.9;
     background: url(../illustrations+Logo/Enigme/Pantherenigme3.png) no-repeat;
     background-position-x: 30%;
-    background-size: 80%;
-    animation: fade-in ease-in-out 1s;
+    background-size: 70%;
+
 }
 
 .enigme aside h3 {
@@ -243,19 +250,43 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
 
 }
 
+/* -------PARTIE FLEXIBLE----------- */
 .enigme aside p {
     text-align: center;
 }
+
+/* ------A VIRER APARTIR DE QUESTION 2 */
+.enigme aside .transcrip-aside .wakanda_font {
+    font-family: 'Wakanda Forever', sans-serif;
+}
+
+.enigme aside .transcrip-aside {
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.enigme aside .transcrip-aside p {
+    text-align: justify;
+}
+
+/* --------------------------------------- */
+/* ------------------------------------ */
 
 .enigme aside .aside-element {
     width: 50%;
     position: relative;
     /* top: 30%; */
     /* valeur qui diminue en fonction de la largeur de la page */
-    top: 8vw;
+    top: 6vw;
     left: 20%;
 }
 
+/* validation de reponse */
+.validator {
+    color: red;
+    letter-spacing: 1px;
+    font-style: italic;
+}
 
 /* media querries */
 
@@ -304,27 +335,14 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
     }
 
     .enigme aside {
-        background-size: contain;
-        background-position-y: 50%;
+        background-size: 90%;
     }
 
     .enigme aside .aside-element {
-        width: 70%;
-        top: 16vw;
-        top: 140px;
+        top: 10vw;
+        width: 60%;
         left: 15%;
-
     }
-
-
-    .enigme .contenant .formulaire {
-        margin: 10vw 0 30px 0;
-    }
-
-    .enigme .formulaire button {
-        margin: 5vw auto;
-    }
-
 
 }
 
@@ -333,44 +351,59 @@ section.enigme .sujet q::before, section.enigme .sujet q::after {
         margin: 0 50px;
     }
 
-    .enigme aside .aside-element {
-        top: 120px;
-    }
-
 }
 
-@media screen and (max-width:557px) {
-    .enigme aside .aside-element {
-        top: 110px;
-    }
-}
+@media screen and (max-width:600px) {
 
-@media screen and (max-width:547px) {
     section.defi {
-        height: 110vw;
+        height: 600px;
     }
 
-    .defi>div {
-        width: 100%;
-    }
-
-    .defi h1 {
-        font-size: calc(2rem + 1vw);
+    .defi img {
+        max-width: 30px;
     }
 
     .defi .paragraphe {
-        background-size: 110%;
-        height: 60vw;
-        background-position: center 0, 50px 55vw;
+        background-size: cover;
+        height: 57vw;
     }
 
-    .enigme aside {
-        background-size: 120%;
+    .defi>div {
+        width: 95%;
+        left: 12%;
     }
 
-    .enigme aside .aside-element {
+    section.enigme {
         width: 80%;
-        left: 13%;
+        position: relative;
+        left: 5%;
+    }
 
+    .flex-container {
+        display: block;
+    }
+
+    aside {
+        height: 40vw;
+    }
+}
+
+@media screen and (max-width:515px) {
+
+    .defi .paragraphe {
+        background-size: cover;
+        height: 77vw;
+    }
+
+    section.defi {
+        height: 600px;
+    }
+
+}
+
+@media screen and (max-width:559px) {
+
+    section.defi {
+        height: 580px;
     }
 }

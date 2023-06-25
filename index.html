@@ -66,28 +66,20 @@
         <!-- section personnage -->
         <section class="perso cacheContent">
             <div class="perso-container">
-                <div class="item1"><img src="./illustrations+Logo/Accueil/Pantherhome2.png" alt=" "></div>
-                <div class="item2">
-                    <h2>KILLMONGER</h2>
-                    <p>a sauvagerie de N'Jadaka alors qu'il servait dans une
-                        unité d'opérations noires de l'armée américaine lui a
-                        valu le surnom de Killmonger. D’origine Wakandaise,
-                        et se sentant abandoné par sa nation, il cherche à
-                        détroner T’Challa dans une quête vers le pourvoir.
-                    </p> <span class="plus">Voir plus ></span>
+                <div class="item1"><img class="photo" src="" alt=" "></div>
+                <div class="item2 itemTxt">
+                    <h2 class="titre"></h2>
+                    <p class="para"></p>
+                    <span class="plus">Voir plus ></span>
                 </div>
-                <div class="item3"><img src="./illustrations+Logo/Accueil/Pantherhome3.png" alt=" "></div>
-                <div class="item4">
-                    <h2>OKOYE</h2>
-                    <p>Okoye est le général des Dora Milaje (groupe d’élite
-                        de femmes guerrières) et le chef des forces armées et
-                        des renseignements wakandais. Témoin du
-                        couronnement de T'Challa, elle se joint à lui dans de
-                        nombreuses aventures.</p>
+                <div class="item3"><img class="photo" src="" alt=" "></div>
+                <div class="item4 itemTxt">
+                    <h2 class="titre"></h2>
+                    <p class="para"></p>
                     <span class="plus">Voir plus ></span>
                 </div>
                 <div class="item5">
-                    <img src="./illustrations+Logo/Accueil/Pantherhome4.png" alt=" ">
+                    <img class="photo" src="" alt=" ">
                     <div class="chevron">
                         <img src="./illustrations+Logo/Accueil/chevron.png" alt="chevron">
                     </div>
@@ -291,10 +283,21 @@
                 <p>Besoin de l’intervention du Wakanda ?</p>
                 <h2>Contactez nous !</h2>
                 <form action="">
-                    <input type="text" placeholder="Nom">
-                    <input type="email" placeholder="Email">
-                    <textarea cols="30" rows="10" placeholder="Message"></textarea>
-                    <button type="submit" class="btn-confirm" id="btnConfirm">Envoyer</button>
+                    <div>
+                        <input class="inputForm" type="text" placeholder="Nom">
+                        <span class="validator"></span>
+                    </div>
+                    <div>
+                        <input class="inputForm" type="email" placeholder="Email">
+                        <span class="validator"></span>
+                    </div>
+                    <div>
+                        <textarea class="inputForm" cols="30" rows="10" placeholder="Message"></textarea>
+                        <span class="validator"></span>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn-confirm" id="btnConfirm">Envoyer</button>
+                    </div>
                 </form>
             </div>
 
@@ -339,8 +342,9 @@
             <div class="about">
                 <h2>PAGES</h2>
                 <ul>
-                    <li><a href="#entete">À propos</a></li>
+                    <li><a href="#entete">Home</a></li>
                     <li><a href="./wakanda.html">Wakanda</a></li>
+                    <li><a href="./enigme.html">Enigme</a></li>
                 </ul>
             </div>
             <div class="social">
@@ -368,7 +372,6 @@
 
     <script src="./srcipts/indexScript.js"></script>
     <script src="./srcipts/scriptAnimation.js"></script>
-    <script src="./srcipts/scriptPopup.js"></script>
 </body>
 
 </html>

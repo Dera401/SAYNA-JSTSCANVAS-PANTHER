@@ -141,20 +141,6 @@ img {
     max-width: 100%;
 }
 
-/* animation simple */
-/* @keyframes fade-in {
-
-    from {
-        transform: translateX(-20%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translate(0);
-        opacity: 1;
-    }
-} */
-
 /* transition vers animation avec scroll */
 .cacheContent {
     transform: translate(-50px);
@@ -209,6 +195,7 @@ footer {
     height: auto;
     display: flex;
     padding: 120px 0 50px 0;
+
 
 }
 
@@ -330,6 +317,27 @@ footer .point {
     left: 40px;
 }
 
+/* animation du scroll */
+@keyframes scroll1 {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 420px;
+    }
+}
+
+@keyframes scroll2 {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 250px;
+    }
+}
+
 .menu-scroll .conteneur-logo {
     position: relative;
     top: 265px;
@@ -342,6 +350,7 @@ footer .point {
     background-color: var(--medium-purple);
     display: inline-block;
     position: absolute;
+    animation: scroll1 5s linear;
 }
 
 .menu-scroll .trait2 {
@@ -351,6 +360,7 @@ footer .point {
     position: absolute;
     left: 20px;
     top: 0px;
+    animation: scroll2 2.9s linear;
 }
 
 .menu-scroll .conteneur-logo img {
@@ -411,6 +421,31 @@ section.blackPanther {
 }
 
 /* alternative de flex */
+/* zoom 20% en hover */
+.photo1:hover, .photo2:hover, .photo3:hover {
+    transform: scale(1.2);
+}
+
+/* class pour animation carrousel */
+.fade {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+/* keyframe animation carrousel */
+@keyframes fade-in {
+    from {
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-300px);
+        opacity: 0;
+
+    }
+
+}
+
 .perso-container div {
     flex: 1;
 }
@@ -583,6 +618,7 @@ section.contacter {
     background: linear-gradient(to bottom, rgb(255, 255, 255) 20%, rgba(255, 255, 255, 0)100%);
     border-radius: 150px;
     width: 50%;
+    min-height: 200px;
     margin: 100px auto;
     padding: 40px 0;
 }
@@ -601,20 +637,25 @@ section.contacter {
 }
 
 /* definition de radius et centrage avec marge */
-.contacter input, .contacter textarea, .contacter button {
+.contacter div {
+    width: 50%;
     margin: 20px auto;
+}
+
+.contacter input, .contacter textarea, .contacter button {
     background-color: var(--light-purple);
     border-radius: 20px;
-    width: 50%;
+    width: 100%;
     padding: 10px;
+    outline: none;
 }
 
-.contacter .form-contact input[type='text'] {
-    margin-bottom: 0;
+.contacter input {
+    height: 2.5vw;
 }
 
-.contacter .form-contact input[type='email'] {
-    margin-top: 10px;
+.contacter textarea {
+    height: 12vw;
 }
 
 /* suppression de la couleur de fond champ */
@@ -634,16 +675,30 @@ section.contacter {
     resize: none;
 }
 
+/*validator  */
+.contacter .validator {
+    color: red;
+    font-style: italic;
+    padding-top: 10px;
+    font-family: "Cantarell", sans-serif;
+}
+
 /* largeur boutton envoyer */
 .contacter button {
-    width: 17%;
-    margin-top: 40px;
-    border: var(--dark-blue) solid 1px;
+    width: fit-content;
+    margin: 0 auto;
+    border: none;
     cursor: pointer;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    font-size: calc(0.6rem + 0.5vw);
 }
 
 .contacter button:hover {
-    box-shadow: var(--dark-blue) 1px 1px 10px;
+    box-shadow: var(--dark-blue) 1px 1px 20px;
 }
 
 /* popup */
@@ -666,6 +721,7 @@ section.contacter {
     width: 90%;
     height: 90vh;
     display: none;
+    z-index: 12;
 
 }
 
@@ -674,20 +730,17 @@ section.contacter {
     top: 50%;
     left: 50%;
     width: 40%;
-    height: 400px;
+    height: 30vw;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
     background: var(--popup-color);
     box-shadow: 0 3.45px 3.45px rgba(0, 0, 0, 0.04);
     transform: translate(-50%, -50%);
     border-radius: 30px;
-    /* border: rgba(255, 255, 255, 0.463) 1px solid; */
-
-
-    /* display: none; */
+    margin: 0;
 }
-
 
 .contacter .popup p {
     color: var(--white-color);
@@ -696,10 +749,10 @@ section.contacter {
     font-size: calc(1rem + 1vw);
 }
 
+
+
 .contacter .popup img {
-    width: 100px;
-    padding-top: 60px;
-    padding-bottom: 10px;
+    width: 20%;
 }
 
 /* fond avant footer */
@@ -866,9 +919,6 @@ div.fond {
         width: 70%;
     }
 
-    .contacter button {
-        width: 25%;
-    }
 }
 
 @media screen and (max-width:645px) {

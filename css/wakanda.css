@@ -23,7 +23,6 @@ section.wakanda {
     position: relative;
     top: 35%;
     left: 14%;
-    animation: fade-in ease-in-out 1s;
 
 }
 
@@ -61,7 +60,7 @@ section.panther-univers {
     padding: 8vw 0;
     column-count: 2;
     column-gap: 100px;
-    animation: fade-in ease-in-out 1s;
+
 }
 
 .panther-univers p {
