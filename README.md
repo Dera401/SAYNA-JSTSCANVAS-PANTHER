@@ -6,8 +6,8 @@
 
 - utilisation de methode javascript pour les liens ancres pour avoir une apparence beaucoup plus fluide
 - ajout des validator sur les formulaires
-  -partie quiz permet de jouer et d'avoir des messages de popup personnalisés en fonction de la reponse et qui débouche à la fin dans le cas d'une reussite sur un popup avec minuter réglé sur 2023-06-30 23:59:59
-  -partie carrousel fonctionnel avec 10 photos et légendes dans la galerie
-  -ajout de la fonctionnalité de logo qui suit le mouvement de la souris sur la page d'accueil . elle est un peu particulière et se comporte comme suit :
-  -par defaut , elle bouge avec la souris - pour le stopper, il suffit de cliquer et il se range à côté de WAKANDA FOREVER
-  -Le mouvement du logo est activé en sortant et rentrant la souris dans la fenêtre.
+- partie quiz permet de jouer et d'avoir des messages de popup personnalisés en fonction de la reponse et qui débouche à la fin dans le cas d'une reussite sur un popup avec minuter réglé sur 2023-06-30 23:59:59  -partie carrousel fonctionnel avec 10 photos et légendes dans la galerie
+- ajout de la fonctionnalité de logo qui suit le mouvement de la souris sur la page d'accueil . Elle est un peu particulière et se comporte comme suit :
+    - par defaut , elle bouge avec la souris
+    - pour le stopper, il suffit de cliquer et il se range à côté de WAKANDA FOREVER
+    - Le mouvement du logo est activé en sortant et rentrant la souris dans la fenêtre.
