@@ -50,7 +50,7 @@ function populate(dataEnigme) {
 
   function afficheFalse() {
     popupTitre.textContent = `OUPS!!!`;
-    popupText.textContent = `vous pouvez encore reessayer`;
+    popupText.textContent = `Vous pouvez encore reessayer`;
     btnPopupQuiz.textContent = `REESAYER`;
     textReponse.value = "";
     overlay.style.display = "block";
@@ -99,6 +99,43 @@ function populate(dataEnigme) {
             popupText.textContent = ``;
             btnPopupQuiz.textContent = `REVENIR A L'ECRAN D'ACCUEIL`;
             textReponse.value = "";
+
+            // ---------PARTIE COMPTE À REBOURS ----------------
+            // definition des dates
+            const dateFuture = new Date("2023-06-26 21:16:00").getTime();
+
+            // definition des references sur html
+            const imgFigma = document.querySelector(".figma img");
+            const minuterText = document.querySelector(".minuter");
+
+            imgFigma.src = "../illustrations+Logo/Enigme/figma_logo.svg";
+
+            let compteurRebours = setInterval(() => {
+              let dateNow = new Date().getTime();
+              let difference = dateFuture - dateNow;
+              // definition des variable jour heure minute seconde
+              let j = Math.floor(difference / (1000 * 60 * 60 * 24));
+              let h = Math.floor(
+                (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+              );
+              let min = Math.floor(
+                (difference % (1000 * 60 * 60)) / (1000 * 60)
+              );
+              let sec = Math.floor((difference % (1000 * 60)) / 1000);
+              // formatage de nombre en unité
+              j = j < 10 ? "0" + j : j;
+              h = h < 10 ? "0" + h : h;
+              min = min < 10 ? "0" + min : min;
+              sec = sec < 10 ? "0" + sec : sec;
+              minuterText.innerHTML = `COMMING SOON... <br><span>${j} : ${h} : ${min} : ${sec}</span>`;
+
+              if (difference < 0) {
+                clearInterval(compteurRebours);
+                minuterText.innerHTML = `C'est l'heure!!`;
+              }
+            }, 1000);
+            // -----------------FIN PARTIE COMPTE A REBOURS---------------
+
             overlay.style.display = "block";
             btnPopupQuiz.addEventListener("click", function () {
               overlay.style.display = "none";
@@ -131,21 +168,3 @@ function populate(dataEnigme) {
     }
   });
 }
-
-// section popup
-
-// definition de l'evenement ouverture de overlay
-// btnConfirm.addEventListener("click", (evt) => {
-//   evt.preventDefault();
-//   ouvrirFenetre();
-// });
-
-// function ouvrirFenetre() {
-//   overlay.style.display = "block";
-// }
-
-// btnPopupQuiz.addEventListener("click", fermerFenetre);
-
-// function fermerFenetre() {
-//   overlay.style.display = "none";
-// }

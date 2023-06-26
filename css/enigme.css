@@ -218,6 +218,8 @@ section.enigme .container-sujet q::before, section.enigme .container-sujet q::af
 
 .formulaire #popup-quiz p {
     letter-spacing: 1.5px;
+    font-size: calc(0.7rem + 0.7vw);
+
 }
 
 .formulaire #popup-quiz h2 {
@@ -231,6 +233,24 @@ section.enigme .container-sujet q::before, section.enigme .container-sujet q::af
 
 }
 
+/* -------------PARTIE MINUTER ET FIGMA------------ */
+#popup-quiz .minuter-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#popup-quiz .minuter-container p {
+    margin-left: 15px;
+    font-size: calc(0.6rem + .6vw);
+    font-weight: bold;
+}
+
+#popup-quiz .minuter-container span {
+    font-size: calc(1rem + 1vw);
+    font-weight: bold;
+}
+
+/* --------------------FIN-------------------------- */
 
 /* conteneur aside */
 .enigme aside {

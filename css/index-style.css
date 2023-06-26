@@ -305,6 +305,21 @@ footer .point {
 /* definition de style propre à index */
 
 
+/*--------------ANIMATION AVEC CANVAS------------ */
+#myCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+section.blackPanther>div {
+    position: relative;
+    z-index: 4;
+}
+
+
+/* ---------------FIN CANVAS----------------------- */
 #btnAccueil {
     background-color: var(--dark-purple);
     border-radius: 2px;
@@ -315,6 +330,7 @@ footer .point {
     position: fixed;
     top: 0px;
     left: 40px;
+    z-index: 1;
 }
 
 /* animation du scroll */
@@ -342,6 +358,7 @@ footer .point {
     position: relative;
     top: 265px;
     left: -10px;
+
 }
 
 .menu-scroll .trait1 {
@@ -422,7 +439,7 @@ section.blackPanther {
 
 /* alternative de flex */
 /* zoom 20% en hover */
-.photo1:hover, .photo2:hover, .photo3:hover {
+.photo:hover {
     transform: scale(1.2);
 }
 
@@ -439,7 +456,7 @@ section.blackPanther {
     }
 
     to {
-        transform: translate(-300px);
+        transform: translate(-400px);
         opacity: 0;
 
     }
@@ -493,15 +510,6 @@ section.blackPanther {
 
 
 }
-
-
-/* mise en place en absolute du 1er image */
-/* .perso-container .item1 {
-    padding-left: 2%;
-    width: 23%;
-    position: absolute;
-    top: -10%;
-} */
 
 /* section historique */
 
@@ -765,6 +773,8 @@ div.fond {
 .zoom:hover {
     transform: scale(1.1);
 }
+
+
 
 /* Media query */
 

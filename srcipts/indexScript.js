@@ -54,25 +54,35 @@ function drawCarrousel(carrousel) {
     }
   }
   // initialisalisation description
+  // avec animation j+i-1 sans j+i
   function initialiseDescr(carrousel) {
     for (let j = 0; j < titre.length; j++) {
-      titre[j].textContent = carrousel[j + i].titre;
-      para[j].textContent = carrousel[j + i].description;
+      titre[j].textContent = carrousel[j + i - 1].titre;
+      para[j].textContent = carrousel[j + i - 1].description;
     }
   }
 
   // itnitialisation illustraton
+  // avec animation j+i et sans animation j+i+1
   function initialiseIllustration() {
     for (let j = 0; j < photo.length; j++) {
       photo[j].src = `./illustrations+Logo/Accueil/Pantherhome_slider_${
-        j + i + 1
+        j + i
       }.png`;
     }
   }
   // initialisation de la carrousel
   function initialiseCarrousel(carrousel) {
-    initialiseIllustration();
-    initialiseDescr(carrousel);
+    // utilisation avec animation
+    setTimeout(() => {
+      initialiseIllustration();
+    }, 400);
+    setTimeout(() => {
+      initialiseDescr(carrousel);
+    }, 400);
+    // utilisation sans animation
+    // initialiseIllustration();
+    // initialiseDescr(carrousel);
     i++;
   }
   // ----------FIN DEFINITIONDES FONCTION UTILE-----------
@@ -90,6 +100,7 @@ function drawCarrousel(carrousel) {
     // gerer les deux derniers cas particuliers
     else if (i <= carrousel.length - 2) {
       const long = carrousel.length;
+      animation();
       initialiseDescr(carrousel);
       photo[0].src = `./illustrations+Logo/Accueil/Pantherhome_slider_${
         i + 1
@@ -97,9 +108,9 @@ function drawCarrousel(carrousel) {
       photo[1].src = `./illustrations+Logo/Accueil/Pantherhome_slider_${long}.png`;
       photo[2].src = `./illustrations+Logo/Accueil/Pantherhome_slider_${1}.png`;
       i++;
-      animation();
     } else if (i <= carrousel.length - 1) {
       const long = carrousel.length;
+      animation();
       photo[0].src = `./illustrations+Logo/Accueil/Pantherhome_slider_${long}.png`;
       titre[0].textContent = carrousel[i].titre;
       para[0].textContent = carrousel[i].description;
@@ -108,16 +119,16 @@ function drawCarrousel(carrousel) {
       para[1].textContent = carrousel[0].description;
       photo[2].src = `./illustrations+Logo/Accueil/Pantherhome_slider_${2}.png`;
       i++;
-      animation();
     } else {
       i = 0;
-      initialiseCarrousel(carrousel);
       animation();
+      initialiseCarrousel(carrousel);
     }
   });
 }
+// ----------------FIN PARTIE CARROUSEL----------------------
 
-// section popup
+// ---------------PARTIE POPUP----------------------------
 // enregistrement des constiables necessaire à l'evenement
 const btnConfirm = document.getElementById("btnConfirm");
 const btnClose = document.getElementById("btnClose");
@@ -162,3 +173,52 @@ btnClose.addEventListener("click", fermerFenetre);
 function fermerFenetre() {
   overlay.style.display = "none";
 }
+
+// --------------FIN PARTIE POPUP------------------------
+
+// DEBUT ANIMATION AVEC LA SOURIS------------------------
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+const img = new Image();
+img.src = "../illustrations+Logo/Accueil/logo_souris_BP2_blanc.png";
+
+let mouseX = 320;
+let mouseY = 80;
+const width = (canvas.width = window.innerWidth);
+const height = (canvas.height = window.innerHeight);
+let pressed = false;
+
+// evenement qui relie l'image au mouvement de la souris
+img.onload = function () {
+  canvas.addEventListener("mousemove", (evt) => {
+    if (!pressed) {
+      mouseX = evt.clientX - this.offsetLeft;
+      mouseY = evt.clientY - this.offsetTop;
+    }
+  });
+
+  // fonction pour animer la l'image
+  function drawImageWithMouse() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.drawImage(img, mouseX - img.width / 2, mouseY - img.height / 2);
+    requestAnimationFrame(drawImageWithMouse);
+  }
+  drawImageWithMouse();
+
+  // desactiver le suivi avec la souris
+  canvas.addEventListener("click", () => {
+    if (!pressed) {
+      cancelAnimationFrame(drawImageWithMouse);
+      mouseX = width / 3.3;
+      mouseY = height / 2.7;
+      pressed = true;
+    }
+  });
+
+  // reactiver le logo avec la souris
+  canvas.addEventListener("mouseout", function () {
+    requestAnimationFrame(drawImageWithMouse);
+    pressed = false;
+  });
+};
