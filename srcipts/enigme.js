@@ -102,7 +102,7 @@ function populate(dataEnigme) {
 
             // ---------PARTIE COMPTE À REBOURS ----------------
             // definition des dates
-            const dateFuture = new Date("2023-06-26 21:16:00").getTime();
+            const dateFuture = new Date("2023-06-30 23:59:59").getTime();
 
             // definition des references sur html
             const imgFigma = document.querySelector(".figma img");
